@@ -119,6 +119,7 @@ docker compose down -v
 
 ### 🏗️ Architecture Overview
 The project was based on this simplified architecture diagram:
+
 <img width="1101" height="541" alt="investmentPlataform" src="https://github.com/user-attachments/assets/6fcf55f0-930a-4dbb-8e88-829d24df230b" />
 
 ---
