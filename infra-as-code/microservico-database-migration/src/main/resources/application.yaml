@@ -1,0 +1,14 @@
+spring:
+  config:
+    import: "optional:file:.env.properties"
+
+  datasource:
+    url: ${DATABASE_URL}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    baseline-on-migrate: true
+
+server:
+  port: 8090

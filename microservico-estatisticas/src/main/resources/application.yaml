@@ -1,0 +1,38 @@
+spring:
+  config:
+    import: "optional:file:.env.properties"
+
+  datasource:
+    url: ${DATABASE_URL}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+  data:
+    redis:
+      host: ${REDIS_HOST}
+      port: ${REDIS_PORT}
+
+management:
+  endpoint:
+    health:
+      show-details: always
+    circuitbreakers:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health,info,circuitbreakers,metrics
+  health:
+    circuitbreakers:
+      enabled: true
+
+external:
+  cotacao:
+    service:
+      url: ${COTACAO_SERVICE_URL}
+
+server:
+  servlet:
+    context-path: /estatisticas
+  port: ${SERVER_PORT:8080}
