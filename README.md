@@ -134,3 +134,4 @@ All services implement Docker healthchecks with retries and timeouts. Dependenci
 * Redis, Kafka and the database are shared across all microservices.
 * `microservico-cotacoes-publisher` should be used **only in dev** to mock price streams.
 * Database migrations are run before the services start using the `database-migration` container.
+* This project was inspired by [this LinkedIn post](https://www.linkedin.com/posts/guilherme-camarao_teste-t%C3%A9cnico-activity-7340980665808486401-kZuH)
