@@ -1,5 +1,7 @@
 # Microservices Investment Platform
 
+This project was inspired by [this LinkedIn post](https://www.linkedin.com/posts/guilherme-camarao_teste-t%C3%A9cnico-activity-7340980665808486401-kZuH), featuring a technical assessment.
+
 This project simulates an investment platform composed of 3 main microservices and a mock quote publisher.
 It uses Kafka for event streaming, Redis for caching, MySQL as the database, and Nginx as a reverse proxy.
 The services are containerized and orchestrated with Docker Compose.
@@ -134,4 +136,3 @@ All services implement Docker healthchecks with retries and timeouts. Dependenci
 * Redis, Kafka and the database are shared across all microservices.
 * `microservico-cotacoes-publisher` should be used **only in dev** to mock price streams.
 * Database migrations are run before the services start using the `database-migration` container.
-* This project was inspired by [this LinkedIn post](https://www.linkedin.com/posts/guilherme-camarao_teste-t%C3%A9cnico-activity-7340980665808486401-kZuH)
