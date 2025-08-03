@@ -2,6 +2,8 @@
 
 This project was inspired by [this LinkedIn post](https://www.linkedin.com/posts/guilherme-camarao_teste-t%C3%A9cnico-activity-7340980665808486401-kZuH), featuring a technical assessment from Itaú, the largest financial institution in Latin America.
 
+Watch my deep-dive video about this project: https://youtu.be/-aF6gl-ci5g
+
 This project simulates an investment platform composed of 3 main microservices and a mock quote publisher.
 It uses Kafka for event streaming, Redis for caching, MySQL as the database, and Nginx as a reverse proxy.
 The services are containerized and orchestrated with Docker Compose.
