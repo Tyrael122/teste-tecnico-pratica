@@ -15,8 +15,8 @@ public class DynamicScheduler {
 
     private final ThreadPoolTaskScheduler taskScheduler;
     private final Random random = new Random();
-    private final static int minIntervalSeconds = 1;
-    private final static int maxIntervalSeconds = 5;
+    private final static int minIntervalMilliseconds = 300; // 0.3 seg
+    private final static int maxIntervalMilliseconds = 1000; // 1.0 seg
 
     private final CotacoesProducerUseCase cotacoesProducerUseCase;
 
@@ -33,9 +33,9 @@ public class DynamicScheduler {
     }
 
     private void scheduleNextExecution() {
-        int nextInterval = minIntervalSeconds + random.nextInt(maxIntervalSeconds - minIntervalSeconds + 1);
-        Instant nextTime = Instant.now().plusSeconds(nextInterval);
-        log.info("Next execution in {} seconds", nextInterval);
+        int nextInterval = minIntervalMilliseconds + random.nextInt(maxIntervalMilliseconds - minIntervalMilliseconds + 1);
+        Instant nextTime = Instant.now().plusMillis(nextInterval);
+        log.info("Next execution in {} milliseconds", nextInterval);
 
         taskScheduler.schedule(
                 this::executeAndReschedule,
